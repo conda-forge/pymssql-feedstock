@@ -43,6 +43,7 @@ about:
     home: http://pymssql.org
     license: LGPL
     license_family: LGPL
+    license_file: LICENSE
     summary: DB-API interface to Microsoft SQL Server for Python. (new Cython-based version)
 
 extra:
