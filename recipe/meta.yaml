@@ -1,6 +1,6 @@
 {% set name = "pymssql" %}
-{% set version = "2.1.4" %}
-{% set sha256 = "3201eb1b1263ad55b555d727ed8bed0b12b7b9de3ce5e529206e36d4be1a7afb" %}
+{% set version = "3.0" %}
+{% set sha256 = "05a0212306270c464e4283c3ecffce78fcd19b3f48e07e62c71fb04e7166db09" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
   # git_rev: cc5676fb8887e7233c8de9121b2b71832991d606 
 
 build:
-  number: 2001
+  number: 0
   skip: true  # [win]
   script:
     - python setup.py build_ext --include-dirs=%PREFIX%\include --library-dirs=%PREFIX%\lib  # [win]
