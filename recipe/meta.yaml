@@ -14,8 +14,7 @@ source:
 
 build:
   number: 0
-  script:
-    - {{ PYTHON }} -m pip install . --no-deps -vv
+  script: "{{ PYTHON }} -m pip install . -vv"
     # - python setup.py build_ext --include-dirs=%PREFIX%\include --library-dirs=%PREFIX%\lib  # [win]
     # - python setup.py build_ext --include-dirs=$PREFIX/include --library-dirs=$PREFIX/lib    # [not win]
     # - python setup.py install --single-version-externally-managed --record record.txt
