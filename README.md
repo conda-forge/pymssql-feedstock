@@ -3,7 +3,7 @@ About pymssql
 
 Home: http://pymssql.org
 
-Package license: LGPL
+Package license: LGPL-2.1-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pymssql-feedstock/blob/master/LICENSE.txt)
 
