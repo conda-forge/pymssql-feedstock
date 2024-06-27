@@ -1,0 +1,14 @@
+diff -ruN pymssql-2.3.0/dev/ccompiler.py pymssql-2.3.0-patch/dev/ccompiler.py
+--- pymssql-2.3.0/dev/ccompiler.py	2024-04-07 01:24:55.000000000 +0200
++++ pymssql-2.3.0-patch/dev/ccompiler.py	2024-06-27 15:27:24.967290046 +0200
+@@ -113,7 +113,10 @@
+     """
+         check for clock_gettime, link with librt for glibc<2.17
+     """
++    from distutils.sysconfig import customize_compiler
++
+     compiler = new_compiler()
++    customize_compiler(compiler)
+     try:
+         if not compiler.has_function('clock_gettime(0,NULL)', includes=['time.h']):
+             if compiler.has_function('clock_gettime(0,NULL)', includes=['time.h'], libraries=['rt']):
