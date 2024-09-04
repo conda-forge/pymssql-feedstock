@@ -13,7 +13,7 @@ source:
     - patches/0001-customize-compiler.patch
 
 build:
-  number: 0
+  number: 1
   script:
     - export LINK_FREETDS_STATICALLY=NO   # [unix]
     - set LINK_FREETDS_STATICALLY=NO      # [win]
