@@ -1,6 +1,6 @@
 {% set name = "pymssql" %}
-{% set version = "2.3.1" %}
-{% set sha256 = "ddee15c4c193e14c92fe2cd720ca9be1dba1e0f4178240380b8f5f6f00da04c6" %}
+{% set version = "2.3.2" %}
+{% set sha256 = "18089641b687be1ebd0f64f0d1ff977478a397ffa1af372bdf10dbec29cf6d2e" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
     - patches/0001-customize-compiler.patch
 
 build:
-  number: 1
+  number: 0
   script:
     - export LINK_FREETDS_STATICALLY=NO   # [unix]
     - set LINK_FREETDS_STATICALLY=NO      # [win]
