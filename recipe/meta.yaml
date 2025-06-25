@@ -31,16 +31,17 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
-    - cython >=3.0.10
+    - cython >=3.1.0
     - freetds
+    - packaging >=24.2
     - pip
-    - setuptools >=54.0
+    - setuptools >=80.0
     - setuptools-git
-    - setuptools_scm >=5.0,<9.0
+    - setuptools_scm >=8.0
     - toml
     - wheel >=0.36.2
     # seems to work without standard-distuitils
-    # - standard-distutils >3.11  # [py>=312]
+    # - standard-distutils  # [py>=312]
   run:
     - python
     - freetds
@@ -57,7 +58,7 @@ about:
   dev_url: https://github.com/pymssql/pymssql
   doc_url: https://pymssql.readthedocs.io/en/stable/
   home: http://pymssql.org
-  license: LGPL-2.1-only
+  license: LGPL-2.1-or-later
   license_file: LICENSE
   license_family: LGPL
   summary: DB-API interface to Microsoft SQL Server for Python. (new Cython-based version)
