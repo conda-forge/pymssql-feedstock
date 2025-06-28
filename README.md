@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pymssql-feedsto
 
 Home: http://pymssql.org
 
-Package license: LGPL-2.1-only
+Package license: LGPL-2.1-or-later
 
 Summary: DB-API interface to Microsoft SQL Server for Python. (new Cython-based version)
 
