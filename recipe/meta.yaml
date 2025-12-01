@@ -1,6 +1,6 @@
 {% set name = "pymssql" %}
-{% set version = "2.3.9" %}
-{% set sha256 = "00aa861936374f251b8e1e4535f26daed32c2fc365b891fedcd97d7863d7321b" %}
+{% set version = "2.3.10" %}
+{% set sha256 = "4e86c28fa71a66da3a89584b16b69dec09fed97feadb7eaf487c70493653fc63" %}
 
 package:
   name: {{ name|lower }}
