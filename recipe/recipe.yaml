@@ -1,0 +1,81 @@
+schema_version: 1
+
+context:
+  name: pymssql
+  version: 2.3.12
+  sha256: b19b103ccda3b5f3e16fe6c07bcaca0ef99332d6dfe505c1e6c262e2e8f717c1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: ${{ sha256 }}
+  patches:
+    - patches/0001-customize-compiler.patch
+
+build:
+  number: 1
+  script:
+    - if: unix
+      then: export LINK_FREETDS_STATICALLY=NO
+    - if: win
+      then: set LINK_FREETDS_STATICALLY=NO
+    - if: win
+      then: python setup.py build_ext --include-dirs=%PREFIX%\include --library-dirs=%PREFIX%\lib
+    - if: not win
+      then: python setup.py build_ext --include-dirs=$PREFIX/include --library-dirs=$PREFIX/lib
+    - python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: cython >=3.1.0
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
+    - ${{ compiler('cxx') }}
+  host:
+    - python
+    - cython >=3.1.0
+    - freetds
+    - packaging >=24.2
+    - pip
+    - setuptools >=80.0
+    - setuptools-git
+    - setuptools_scm >=8.0
+    - toml
+    - wheel >=0.36.2
+    # seems to work without standard-distuitils
+    # - standard-distutils  # [py>=312]
+  run:
+    - python
+    - freetds
+
+tests:
+  - python:
+      imports:
+        - pymssql
+  - requirements:
+      run:
+        - pip
+    script:
+      - pip check
+
+about:
+  license: LGPL-2.1-or-later
+  license_file: LICENSE
+  summary: DB-API interface to Microsoft SQL Server for Python. (new Cython-based version)
+  homepage: http://pymssql.org
+  repository: https://github.com/pymssql/pymssql
+  documentation: https://pymssql.readthedocs.io/en/stable/
+
+extra:
+  recipe-maintainers:
+    - primozgodec
+    - mariusvniekerk
+    - xylar
