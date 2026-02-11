@@ -3,7 +3,7 @@ About pymssql-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pymssql-feedstock/blob/main/LICENSE.txt)
 
-Home: http://pymssql.org
+Home: http://pymssql.org/
 
 Package license: LGPL-2.1-or-later
 
