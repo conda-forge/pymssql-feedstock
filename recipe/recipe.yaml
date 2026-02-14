@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pymssql
-  version: "2.3.12"
+  version: "2.3.13"
 
 package:
   name: ${{ name|lower }}
@@ -10,12 +10,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: b19b103ccda3b5f3e16fe6c07bcaca0ef99332d6dfe505c1e6c262e2e8f717c1
+  sha256: 2137e904b1a65546be4ccb96730a391fcd5a85aab8a0632721feb5d7e39cfbce
   patches:
     - patches/0001-customize-compiler.patch
 
 build:
-  number: 1
+  number: 0
   script:
     - if: unix
       then:
