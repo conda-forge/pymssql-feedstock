@@ -15,7 +15,7 @@ source:
     - patches/0001-customize-compiler.patch
 
 build:
-  number: 0
+  number: 1
   script:
     - if: unix
       then:
