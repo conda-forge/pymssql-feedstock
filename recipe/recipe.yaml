@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pymssql
-  version: "2.4.0"
+  version: "2.4.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,12 +10,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: c74eeb11f154eaec72ba39db3395cec8b522b580a3165584915390d6f7e962b3
+  sha256: 16720f33d7dcfc7ef906cad8d182f05ba7e5d2c35c6be6a5bc17ce5edfc428b2
   patches:
     - patches/0001-customize-compiler.patch
 
 build:
-  number: 1
+  number: 0
   script:
     - if: unix
       then:
