@@ -39,15 +39,15 @@ requirements:
     - ${{ compiler('cxx') }}
   host:
     - python
-    - cython >=3.1.0
-    - freetds
-    - packaging >=24.2
     - pip
-    - setuptools >=80.0
-    - setuptools-git
-    - setuptools_scm >=8.0
-    - toml
+    - packaging >=24.2
+    - setuptools >80.0
+    # setuptools_scm[toml] needs nothing extra on conda-forge
+    - setuptools-scm >=8.0
     - wheel >=0.36.2
+    - cython >=3.1.0
+    - tomli
+    - freetds
     # seems to work without standard-distuitils
     # - standard-distutils
   run:
